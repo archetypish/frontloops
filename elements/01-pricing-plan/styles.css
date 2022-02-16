@@ -1,0 +1,141 @@
+/* --------------------------------- */
+/*            General */
+/* --------------------------------- */
+
+:root {
+  --clr-dark: rgb(71, 100, 180);
+  --clr-light: #a7acac;
+  --clr-background: #799bce;
+}
+
+/* box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* resetting the margins */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  color: var(--clr-light);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  min-height: 100vh;
+}
+
+/* --------------------------------- */
+/*            Typography             */
+/* --------------------------------- */
+
+.plan-title {
+  color: var(--clr-dark);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+}
+
+.plan-price {
+  color: var(--clr-dark);
+  font-size: 2rem;
+}
+
+.plan-price::before {
+  font-size: 1rem;
+  content: '$';
+  position: relative;
+  bottom: 0.6rem;
+}
+
+.plan-price::after {
+  content: '/month';
+  font-size: 1rem;
+}
+
+/* --------------------------------- */
+/*            Layout                 */
+/* --------------------------------- */
+
+/* center the container on both horizontal and vertical axis */
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-background);
+}
+
+.container {
+  max-width: 75%;
+  border-radius: 7px;
+  background-color: white;
+  margin: 4em auto;
+  display: flex;
+  padding: 2em;
+  gap: 2em;
+  /* shadows */
+  box-shadow: 5px 5px 10px rgb(0 0 0 /0.2), -5px -5px 10px rgb(0 0 0 /0.2);
+}
+
+.plan {
+  border-radius: 7px;
+  /* make each of the containers equal */
+  flex: 1 1 0%;
+
+  /* height */
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* space around */
+  padding: 1em 4em;
+
+  /* space between */
+  gap: 2em;
+  cursor: pointer;
+}
+
+.plan:hover {
+  background-color: #f6f6f6;
+}
+
+/* organize each box */
+
+.plan-logo {
+  order: -1;
+  width: 75px;
+}
+
+.plan-price {
+  margin-top: auto;
+}
+
+.plan-description {
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    max-width: 50%;
+    min-width: 350px;
+  }
+}
