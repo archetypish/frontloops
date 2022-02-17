@@ -37,6 +37,7 @@ body {
   line-height: 1.5;
   font-weight: 500;
   min-height: 100vh;
+  background-color: var(--clr-background);
 }
 
 /* --------------------------------- */
@@ -78,7 +79,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--clr-background);
 }
 
 .container {
@@ -87,6 +87,7 @@ body {
   background-color: white;
   margin: 4em auto;
   display: flex;
+  justify-content: space-between;
   padding: 2em;
   gap: 2em;
   /* shadows */
@@ -100,6 +101,7 @@ body {
 
   /* height */
   min-height: 350px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,6 +113,7 @@ body {
   /* space between */
   gap: 2em;
   cursor: pointer;
+  transition: background-color 150ms ease-in-out;
 }
 
 .plan:hover {
