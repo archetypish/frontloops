@@ -2,6 +2,11 @@
 /*       CSS Properties        */
 /* --------------------------- */
 
+:root {
+  --clr-dark: #9a9a9a;
+  --clr-light: #d7d7d7;
+}
+
 /* --------------------------- */
 /*            Reset            */
 /* --------------------------- */
@@ -28,14 +33,14 @@ body {
 
 /* make images easier to work with */
 img {
-  /* display: block; */
-  /* max-width: 100%; */
   max-width: 60px;
+  display: inline-block;
 }
 
 /* make forms easier to work with  */
 input,
-button {
+button,
+label {
   font: inherit;
 }
 
@@ -47,8 +52,136 @@ body {
   padding: 0;
   font-family: Roboto, san-serif;
   font-weight: 400;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
 }
 
 /* --------------------------- */
 /*          Typography         */
 /* --------------------------- */
+
+.title {
+  font-size: 1.75rem;
+}
+
+.payment-form__label {
+  font-size: 1.1rem;
+}
+
+.payment-form__submit-btn {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* --------------------------- */
+/*          Layout             */
+/* --------------------------- */
+
+body {
+  /* Center the container horizontally and vertically */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* add background image */
+  background-image: url('img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  border: 2px solid red;
+  width: 40%;
+  max-width: 500px;
+  /* min-height: 450px; */
+  background-color: #fff;
+}
+
+/* -------------Add dots -------------*/
+
+.navigator__dot {
+  display: inline-block;
+  background-color: var(--clr-light);
+  width: 7.5px;
+  height: 7.55px;
+  border-radius: 5px;
+}
+
+.navigator__dot-current {
+  background-color: var(--clr-dark);
+}
+
+/* -------------fix layout overall layout of container -------------*/
+.container > * {
+  border: 2px solid red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-form__label,
+.payment-form__submit-btn {
+  width: 100%;
+  height: 4.5rem;
+  display: block;
+}
+
+/* -------------fix layout of dots -------------*/
+
+.navigator {
+  text-align: center;
+}
+
+.navigator__dot {
+  margin-right: 0.3em;
+  margin-top: 1.25em;
+  margin-bottom: 1em;
+}
+
+/* -------------fix layout of 'payment method' -------------*/
+.title {
+  text-align: center;
+  margin-bottom: 1.25em;
+}
+
+/* -------------fix layout of form -------------*/
+.payment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-form > * {
+  border: 2px solid red;
+}
+
+/* -------------fix layout of each payment mode -------------*/
+.payment-form__label > * {
+  border: 2px solid red;
+}
+
+/* vertically align image */
+.payment-form__label {
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* remove or replace the radio button */
+
+/* horizontal alignment of all 3 elements*/
+
+/* upper and bottom border */
+
+/* hover state and clickability */
+
+/*------------- fix layout of button -------------*/
+
+/* horizontal and vertical alignment */
+
+/* remove default behavior of form */
+
+/* hover state */

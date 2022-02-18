@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Loop 1 - Step 2</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Loop 1 - Step 2</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigator">
+        <div class="navigator__dot navigator__dot-current"></div>
+        <div class="navigator__dot"></div>
+        <div class="navigator__dot"></div>
+      </div>
+      <h2 class="title">Payment Method</h2>
+      <form class="payment-form">
+        <label class="payment-form__label"
+          ><img src="img/visa.svg" class="payment-form__logo" /><input
+            type="radio"
+            name="payment_mode"
+            value="visa"
+            class="payment-form__radio-btn"
+          />Visa</label
+        >
+        <label class="payment-form__label"
+          ><img src="img/mastercard.svg" class="payment-form__logo" />
+          <input
+            type="radio"
+            name="payment_mode"
+            value="mastercard"
+            class="payment-form__radio-btn"
+          />Mastercard</label
+        >
+        <label class="payment-form__label"
+          ><img src="img/maestro.svg" class="payment-form__logo" /><input
+            type="radio"
+            name="payment_mode"
+            value="maestro"
+            class="payment-form__radio-btn"
+          />Maestro</label
+        >
+        <button class="payment-form__submit-btn" type="submit">
+          Next Step <img src="img/arrow.svg" />
+        </button>
+      </form>
+    </div>
+  </body>
 </html>
