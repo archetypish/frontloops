@@ -4,7 +4,7 @@
 
 :root {
   --clr-dark: #9a9a9a;
-  --clr-light: #d7d7d7;
+  --clr-light: #efefef;
 }
 
 /* --------------------------- */
@@ -19,14 +19,14 @@
 
 /* reset the margins */
 body,
-h1,
 h2,
 p {
   margin: 0;
 }
 
 /* set up the body */
-body {
+
+.root {
   min-height: 100vh;
   line-height: 1.5;
 }
@@ -60,24 +60,29 @@ body {
 /*          Typography         */
 /* --------------------------- */
 
-.title {
+.card__title {
   font-size: 1.75rem;
 }
 
-.payment-form__label {
+.options__label {
   font-size: 1.1rem;
+  color: var(--clr-dark);
+  font-weight: 500;
 }
 
-.payment-form__submit-btn {
+.btn {
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  background: #5a8bdd;
+  color: #fff;
+  font-size: 1rem;
 }
 
 /* --------------------------- */
 /*          Layout             */
 /* --------------------------- */
 
-body {
+.root {
   /* Center the container horizontally and vertically */
 
   display: flex;
@@ -90,17 +95,19 @@ body {
   background-repeat: no-repeat;
 }
 
-.container {
-  border: 2px solid red;
+.card {
   width: 40%;
   max-width: 500px;
-  /* min-height: 450px; */
+
   background-color: #fff;
+  border-radius: 7px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4), -2px -2px 15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 /* -------------Add dots -------------*/
 
-.navigator__dot {
+.dots__item {
   display: inline-block;
   background-color: var(--clr-light);
   width: 7.5px;
@@ -108,80 +115,122 @@ body {
   border-radius: 5px;
 }
 
-.navigator__dot-current {
+.dots__item--active {
   background-color: var(--clr-dark);
 }
 
 /* -------------fix layout overall layout of container -------------*/
-.container > * {
-  border: 2px solid red;
-}
 
-.container {
+.card {
   display: flex;
   flex-direction: column;
 }
 
-.payment-form__label,
-.payment-form__submit-btn {
-  width: 100%;
-  height: 4.5rem;
-  display: block;
-}
-
 /* -------------fix layout of dots -------------*/
 
-.navigator {
+.dots {
   text-align: center;
 }
 
-.navigator__dot {
+.dots__item {
   margin-right: 0.3em;
   margin-top: 1.25em;
   margin-bottom: 1em;
 }
 
 /* -------------fix layout of 'payment method' -------------*/
-.title {
+.card__title {
   text-align: center;
   margin-bottom: 1.25em;
 }
 
 /* -------------fix layout of form -------------*/
-.payment-form {
-  display: flex;
-  flex-direction: column;
+
+.btn,
+.options__label {
+  width: 100%;
+  height: 4.5rem;
 }
 
-.payment-form > * {
-  border: 2px solid red;
+.options__item {
+  display: flex;
 }
 
 /* -------------fix layout of each payment mode -------------*/
-.payment-form__label > * {
-  border: 2px solid red;
-}
 
 /* vertically align image */
-.payment-form__label {
-  padding: 2em;
+.options__label {
+  padding-left: 1em;
+  padding-right: 2em;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 2em;
 }
 
-/* remove or replace the radio button */
+.options__item {
+  border-top: 1px solid var(--clr-dark);
+  transition: background-color 0.15s ease-in-out;
+}
 
-/* horizontal alignment of all 3 elements*/
+/* add ticks to each radio button in the html*/
 
-/* upper and bottom border */
+/* check html file structure */
+.options__selected-icon {
+  display: none;
+  margin-left: auto;
+}
+/* modifying the selected state looks of labels */
+/* checked state of radio button */
+/* we want to modify the looks of the label that is enclosing it */
+
+input[type='radio']:checked + .options__label {
+  color: #000;
+}
+/* make ticks appear */
+input[type='radio']:checked + .options__label .options__selected-icon {
+  display: inline;
+}
+
+/* hide the radio button */
+input[type='radio'] {
+  opacity: 0;
+  position: fixed;
+}
 
 /* hover state and clickability */
+
+/* change hover state of each option */
+.options__item:hover {
+  background-color: var(--clr-light);
+}
+.options__label {
+  cursor: pointer;
+}
 
 /*------------- fix layout of button -------------*/
 
 /* horizontal and vertical alignment */
-
-/* remove default behavior of form */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding-top: 0;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.15s ease-in-out;
+}
 
 /* hover state */
+
+.btn:hover {
+  background-color: #558ef3;
+}
+
+/* add animation for click */
+.btn:active {
+  top: 1px;
+}

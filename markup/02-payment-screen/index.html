@@ -12,43 +12,71 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="navigator">
-        <div class="navigator__dot navigator__dot-current"></div>
-        <div class="navigator__dot"></div>
-        <div class="navigator__dot"></div>
+    <div class="root">
+      <div class="card">
+        <div class="card__top">
+          <div class="dots card__dots">
+            <div class="dots__item dots__item--active"></div>
+            <div class="dots__item"></div>
+            <div class="dots__item"></div>
+          </div>
+          <h2 class="card__title">Payment Method</h2>
+        </div>
+
+        <form class="options">
+          <!-- 1st option -->
+          <div class="options__item">
+            <input
+              type="radio"
+              name="payment-mode"
+              value="visa"
+              id="payment-mode-visa"
+            />
+            <label class="options__label" for="payment-mode-visa">
+              <img src="img/visa.svg" class="options__icon" />
+              Visa
+              <img src="img/check.svg" class="options__selected-icon" />
+            </label>
+          </div>
+
+          <!-- 2nd option -->
+          <div class="options__item">
+            <input
+              type="radio"
+              name="payment-mode"
+              value="mastercard"
+              id="payment-mode-mastercard"
+            />
+            <label class="options__label" for="payment-mode-mastercard">
+              <img src="img/mastercard.svg" class="options__icon" />
+              Mastercard
+              <img src="img/check.svg" class="options__selected-icon" />
+            </label>
+          </div>
+
+          <!-- 3rd option -->
+          <div class="options__item">
+            <input
+              type="radio"
+              name="payment-mode"
+              value="maestro"
+              id="payment_mode-maestro"
+            />
+            <label class="options__label" for="payment_mode-maestro">
+              <img src="img/maestro.svg" class="options__icon" />
+              Maestro
+              <img src="img/check.svg" class="options__selected-icon" />
+            </label>
+          </div>
+
+          <button class="btn" type="submit">
+            Next Step
+            <img src="img/arrow.svg" class="btn__icon" />
+          </button>
+        </form>
       </div>
-      <h2 class="title">Payment Method</h2>
-      <form class="payment-form">
-        <label class="payment-form__label"
-          ><img src="img/visa.svg" class="payment-form__logo" /><input
-            type="radio"
-            name="payment_mode"
-            value="visa"
-            class="payment-form__radio-btn"
-          />Visa</label
-        >
-        <label class="payment-form__label"
-          ><img src="img/mastercard.svg" class="payment-form__logo" />
-          <input
-            type="radio"
-            name="payment_mode"
-            value="mastercard"
-            class="payment-form__radio-btn"
-          />Mastercard</label
-        >
-        <label class="payment-form__label"
-          ><img src="img/maestro.svg" class="payment-form__logo" /><input
-            type="radio"
-            name="payment_mode"
-            value="maestro"
-            class="payment-form__radio-btn"
-          />Maestro</label
-        >
-        <button class="payment-form__submit-btn" type="submit">
-          Next Step <img src="img/arrow.svg" />
-        </button>
-      </form>
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
